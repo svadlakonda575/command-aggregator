@@ -24,29 +24,29 @@ Sample Request:
 ```
 {
     "texas" : [{
-        "speaker" : "virginia",
-        "command": "first palce3"
+        "speaker" : "John",
+        "command": "CNN"
     },
     {
-        "speaker" : "virginia",
-        "command": "first palce2"
+        "speaker" : "John",
+        "command": "CNN"
     },
     {
-        "speaker" : "virginia",
-        "command": "first palce2"
+        "speaker" : "John",
+        "command": "BBC"
     }],
 
     "new Hampshire" : [{
-        "speaker" : "virginia",
-        "command": "first palce1"
+        "speaker" : "John",
+        "command": "Game Of throwns"
     },
     {
-        "speaker" : "virginia",
-        "command": "first palce1"
+        "speaker" : "John",
+        "command": "CNBC"
     },
     {
-        "speaker" : "virginia",
-        "command": "first palce1"
+        "speaker" : "John",
+        "command": "CNBC"
     }]
 }
 ```
