@@ -58,12 +58,14 @@ public class CommandAggregatorServiceImpl implements CommandAggregatorService {
                 List<Command> command = commandRepository.getTopCommandByState(id, PageRequest.of(0, 1));
                 commandResponse.setMostFrequentCommand(command.get(0).getCommandId().getCommand());
                 response.put(state, commandResponse);
-                List<Object[]> topCommandsObjects = commandRepository.getDistinctTopByFrequency(PageRequest.of(0, 3));
 
-                List<String> topCommands = topCommandsObjects.stream().map(objArr -> objArr[0].toString()).collect(Collectors.toList());
-                response.put(TOP_COMMANDS, (Object) topCommands);
+
                 commandResponse.setStopProcessTime(System.currentTimeMillis());
             });
+
+            List<Object[]> topCommandsObjects = commandRepository.getDistinctTopByFrequency(PageRequest.of(0, 3));
+            List<String> topCommands = topCommandsObjects.stream().map(objArr -> objArr[0].toString()).collect(Collectors.toList());
+            response.put(TOP_COMMANDS, (Object) topCommands);
         }finally {
             reentrantLock.unlock();
         }
