@@ -28,7 +28,7 @@ public class CommandExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<ApiError> defaultExceptionHandler(Exception ex){
         logger.error("Internal Server Error: ",ex.getMessage());
         ApiError error = new ApiError(ex.getMessage(), System.currentTimeMillis(), HttpStatus.INTERNAL_SERVER_ERROR);
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
 
 }
